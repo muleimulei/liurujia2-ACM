@@ -31,9 +31,9 @@ int cc(int *a){
 }
 int main()
 {
-	int c;
-	while( (c = getchar()) !='\n' ){
-		putchar(c);
-	}
-	return 0;
+	char buf[]="dasda12321qwe";
+	int v;
+	string s1, s2;
+	sscanf(buf, "%s%d%s", s1.c_str(), &v, s2.c_str());
+	printf("%s %d %s\n",s1.c_str(), v, s2.c_str());
 }
