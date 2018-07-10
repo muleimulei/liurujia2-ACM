@@ -1,5 +1,7 @@
 #include<cstdio>
 #include<cstring>
+//#include<string>
+
 #include<queue>
 #define maxn 1000
 #include<vector>
@@ -39,10 +41,15 @@ void addnode(int v, char *s){
 }
 
 void remove_tree(Node *root){
-	if(!root) return;
-	remove_tree(root->left);
-	remove_tree(root->right);
-	delete root;
+//	if(!root) return;
+//	remove_tree(root->left);
+//	remove_tree(root->right);
+//	delete root;
+	if(root!=NULL){
+		if(root->left) remove_tree(root->left);
+		if(root->right) remove_tree(root->right);
+		delete root;
+	}
 }
 
 bool read_input(){
@@ -76,6 +83,8 @@ bool bfs(vector<int> & ans){
 	}
 	return true;
 }
+
+
 
 int main(){
 	while(read_input()){

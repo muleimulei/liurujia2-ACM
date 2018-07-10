@@ -2,13 +2,13 @@
 #include<algorithm>
 #include<math.h>
 #include<cstdio>
-#include<string>
+#include<string.h>
 #include<set>
 #include<iostream>
 #include<sstream>
 #include<cctype>
 using namespace std;
-
+int a,b,c;
 int is_prime(int n){ //ÅĞ¶ÏÊÇ·ñÊÇËØÊı 
 	if(n<=1) return 0;
 	int m = floor(sqrt(n) + 0.5);
@@ -31,9 +31,6 @@ int cc(int *a){
 }
 int main()
 {
-	char buf[]="dasda12321qwe";
-	int v;
-	string s1, s2;
-	sscanf(buf, "%s%d%s", s1.c_str(), &v, s2.c_str());
-	printf("%s %d %s\n",s1.c_str(), v, s2.c_str());
+	
+	printf("%d %d %d\n",a, b, c) ;
 }
