@@ -31,6 +31,11 @@ int cc(int *a){
 }
 int main()
 {
+	int a[10];
+	memset(a, 2, sizeof(a));
+	for(int i = 0; i<10;i++){
+		printf("%d ", a[i]);
+	}
 	
-	printf("%d %d %d\n",a, b, c) ;
+	
 }
