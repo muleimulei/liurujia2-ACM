@@ -74,6 +74,34 @@ bool inside(int r, int c){
 		return true;
 	return false;
 }
+
+
+int rr;
+
+void print(Node u){
+	if(d[u.r][u.c][u.dir]!=0){
+		print(p[u.r][u.c][u.dir]);
+	}
+	if(rr % 10 ==0){
+		cout<<"  "<<"("<<u.r<<","<<u.c<<")";
+	}else if(rr % 10 ==9){
+		cout<<" "<<"("<<u.r<<","<<u.c<<")"<<endl;
+	}else{
+		cout<<" "<<"("<<u.r<<","<<u.c<<")";
+	}
+	rr++;
+}
+
+void printans(Node u){
+	rr = 1;
+	cout<<maze_name<<endl;
+	
+	cout<<"  "<<"("<<r0<<","<<c0<<")";
+	print(u);
+	rr++;
+}
+
+
 void print_ans(Node u){
 	// 将目标节点逆序追朔到初始节点
 	 vector<Node> v;
@@ -105,7 +133,8 @@ void solve(){
 	while(!q.empty()){
 		Node u = q.front(); q.pop();
 		if(u.r== r2 && u.c == c2){
-			print_ans(u);
+			printans(u);
+			if(rr % 10 !=0) cout<<endl;
 			return;
 		}
 		for(int i = 0; i<3;i++){

@@ -29,13 +29,19 @@ long long  C(int n, int m){
 int cc(int *a){
 	printf("%d\n", sizeof(a));
 }
+
+
+void doit(int i){
+	if(i !=0){
+		doit(i / 2);
+		printf("%d ", i %2);
+	}
+}
 int main()
 {
-	int a[10];
-	memset(a, 2, sizeof(a));
-	for(int i = 0; i<10;i++){
-		printf("%d ", a[i]);
-	}
-	
+	vector<int> v[3];
+	v[1].push_back(12);
+	v[1].push_back(34);
+	printf("%d %d", v[1][0], v[1][1]);
 	
 }

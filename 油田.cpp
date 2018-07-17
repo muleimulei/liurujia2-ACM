@@ -1,4 +1,5 @@
 #include<cstdio>
+#include<cstring>
 #define maxn 1000+10
 
 char oil[maxn][maxn];
