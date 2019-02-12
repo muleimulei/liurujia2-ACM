@@ -51,20 +51,22 @@ bool cc(int &sum, string pos){
 bool solve(int &sum, string pos){
 	c[pos] = 1;
 	string val = G[pos], s;
-	string h = val.substr(0, 2); // 一开始的位置 
-	int d;
-	if(cc(d, h)){
-		sum += d;
-	}else{
-		return false;
-	}
+	
+	string h = val.substr(0, 2);
+		int d;
+		if(cc(d, h)){
+			sum += d;
+		}else{
+			return false;
+		}
 	int i = 2, j = i+1;
+	
 	while(j<val.size()){
 		while(j<val.size() && (val[j]!='-' && val[j]!='+')) {
 			j++;
 		}
 		if(val[i]=='+'){
-			s = val.substr(i+1, j);
+			s = val.substr(i+1, j-i-1);
 			if(isnum(s)){
 				sum += atoi(s.c_str());
 			}else {
@@ -76,7 +78,7 @@ bool solve(int &sum, string pos){
 				}
 			}
 		}else if(val[i]=='-'){
-			s = val.substr(i+1, j);
+			s = val.substr(i+1, j-i-1);
 			if(isnum(s)){
 				sum -= atoi(s.c_str());
 			}else {
@@ -97,11 +99,11 @@ bool solve(int &sum, string pos){
 
 
 int main(){
-	int kase = 0;
+//	int kase = 0;
 	while(cin>>m>>n && m && n){
-		if(kase) printf("\n");
-		kase++;
-		
+//		if(kase) printf("\n");
+//		kase++;
+//		
 		G.clear();
 		c.clear(); // 0--未遍历，1--递归中， 2--递归完成 
 		ans.clear();
@@ -152,23 +154,24 @@ int main(){
 				}
 			}
 		}else{
-			for(int i = -1; i < m; i++){
-				for(int j = -1; j < n; j++){
-					if(i==-1 && j!=-1){
-						printf("%7d", j);
-					}else if(i!=-1 && j==-1){
-						printf("%c", 'A'+i);
-					}else if(i!=-1 && j==0){
-						string pos = getpos(i, j);
-						printf("%6d", ans[pos]);
-					}else if(i!=-1 && j!=0 && j!=-1){
-						string pos = getpos(i, j);
-						printf("%7d", ans[pos]);
-					}
+			
+			printf(" ");
+			for(int i = 0; i<n; i++){
+				printf("%6d", i);
+			}
+			printf("\n");
+			
+			
+			for(int i = 0; i < m; i++){
+				printf("%c", 'A'+i);
+				for(int j = 0; j<n; j++){
+					printf("%6d", ans[getpos(i, j)]);
 				}
 				printf("\n");
 			}
 		}
+		
+		printf("\n");
 	}
 	return 0;
 }
