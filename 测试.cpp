@@ -4,6 +4,7 @@
 #include<cstdio>
 #include<string.h>
 #include<set>
+#include<list>
 #include<iostream>
 #include<sstream>
 #include<cctype>
@@ -37,11 +38,15 @@ void doit(int i){
 		printf("%d ", i %2);
 	}
 }
+
+bool cmp(int a, int b){
+	return a>b;
+}
+
 int main()
 {
-	vector<int> v[3];
-	v[1].push_back(12);
-	v[1].push_back(34);
-	printf("%d %d", v[1][0], v[1][1]);
+	std::list<int> l = {1,2,3,4,5,6,7};
+	l.sort(cmp);
+	cout<<l.front();
 	
 }
