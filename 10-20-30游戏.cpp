@@ -37,7 +37,6 @@ void place(int d){
 	}
 }
 
-
 void judge(int k) {
 	deque<int> &v = piles[k];
 	if(v.size() >2){

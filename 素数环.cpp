@@ -2,12 +2,10 @@
 #include<cstring>
 #include<cmath> 
 #define maxn 1000
-
 int num[maxn];
 int isp[maxn];
 int vis[maxn];
 int n;
-
 int is_prime(int n){
 	int q = (int)sqrt(n)+1;
 	for(int i = 2; i < q;i++){
@@ -47,8 +45,7 @@ int main(){
 		printf("Case %d:\n", ++kase);
 		num[0] = 1;
 		vis[1] = 1;
-		dfs(1);	
-
+		dfs(1);
 	} 
 	return 0;
 }
