@@ -1,8 +1,5 @@
 /*
-
 	不知道错哪里了 
-
-
 */ 
 #include<cstdio>
 #include<cstring>
@@ -104,3 +101,4 @@ int main(){
 	}
 	return 0;
 } 
+
