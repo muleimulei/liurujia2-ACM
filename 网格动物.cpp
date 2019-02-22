@@ -134,6 +134,5 @@ int main(){
 		printf("%d\n", ans[n][w][h]);
 	}
 	
-	
 	return 0;
 }

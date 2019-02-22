@@ -9,7 +9,7 @@
 #include<sstream>
 #include<cctype>
 using namespace std;
-int a,b,c;
+//int a,b,c;
 int is_prime(int n){ //ÅĞ¶ÏÊÇ·ñÊÇËØÊı 
 	if(n<=1) return 0;
 	int m = floor(sqrt(n) + 0.5);
@@ -43,10 +43,11 @@ bool cmp(int a, int b){
 	return a>b;
 }
 
+typedef int State[9];
+ 
+State a[3];
+
 int main()
 {
-	std::list<int> l = {1,2,3,4,5,6,7};
-	l.sort(cmp);
-	cout<<l.front();
-	
+	printf("%d\n", sizeof(a));	
 }
