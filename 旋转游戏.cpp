@@ -4,7 +4,7 @@
 using namespace std;
 
 const int maxn = 34;
-char ans[100000];
+char ans[10000];
 /*
       01    02
       03    04
@@ -49,10 +49,8 @@ int center[] = {7, 8, 9, 13, 18,17,16,12};
 // 反向移动 
 int rev[] = {5, 4, 7, 6, 1, 0, 3 ,2};
 
-
 int a[maxn+1];
 int maxd; // maxd记录深度
-
 
 // 判断中心8个点是否相同 
 bool judge(){
@@ -100,25 +98,23 @@ bool dfs(int c){
 
 int main(){
 	#ifdef LOCAL
-		freopen("1.in", "r", stdin);
+	freopen("1.in", "r", stdin);
 	#endif
 	while(scanf("%d", &a[1])==1 && a[1]){
 		memset(ans, 0, sizeof(ans));
 		for(int i = 2; i <=24; i++ ) scanf("%d", &a[i]);
-
-		bool ok = 0;
-		for(maxd = 1; ; maxd++){
-			if(dfs(0)){
-				ok = 1;
-				break;
-			}
-		}
-		if(ok){
-			printf("%s\n%d\n", ans,a[7]);
+		
+		if(judge()){
+			puts("No moves needed");
 		}else{
-			printf("No moves needed\n");
-			printf("%d\n", a[7]);
+			for(maxd = 1; ;maxd++){
+				if(dfs(0)){
+					break;
+				}
+			}
+			puts(ans);
 		}
+		printf("%d\n", a[7]);
 	}
 	return 0;
 }

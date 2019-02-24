@@ -17,7 +17,7 @@ int get_first(int a, int b){
 // 如果当前解V比目前最优解ans更优，更新
 bool better(int d){
 	for(int i = d; i>=0; i--){
-		if(v[i]!=ans[i] ){
+		if(v[i]!=ans[i] ){ 
 			return ans[i]== -1 || v[i] < ans[i];
 		}
 	}
