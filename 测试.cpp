@@ -3,12 +3,17 @@
 #include<math.h>
 #include<cstdio>
 #include<string.h>
+#include<vector>
 #include<set>
 #include<list>
 #include<iostream>
 #include<sstream>
+#include<queue>
+#include<deque>
 #include<cctype>
+
 using namespace std;
+
 //int a,b,c;
 int is_prime(int n){ //≈–∂œ «∑Ò «Àÿ ˝ 
 	if(n<=1) return 0;
@@ -31,7 +36,6 @@ int cc(int *a){
 	printf("%d\n", sizeof(a));
 }
 
-
 void doit(int i){
 	if(i !=0){
 		doit(i / 2);
@@ -39,15 +43,25 @@ void doit(int i){
 	}
 }
 
-bool cmp(int a, int b){
-	return a>b;
-}
-
-typedef int State[9];
- 
-State a[3];
+struct edge{
+	int val, e;
+	edge (int val, int e): val(val), e(e){
+	}
+	bool operator < (const edge &b) const{
+		return val > b.val;
+	}
+};
 
 int main()
 {
-	printf("%d\n", sizeof(a));	
+	priority_queue<edge> v;
+	v.push({4, 2});
+	v.push({5, 3});
+	v.push({2, 6});
+
+	while(!v.empty()){
+		printf("%d ", v.top().val);
+		v.pop();
+	}
+	return 0;
 }

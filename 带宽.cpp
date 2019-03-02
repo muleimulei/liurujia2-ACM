@@ -19,7 +19,8 @@ int vis[10];
 int ans[10], A[10];
 
 void dfs (int cur, int bw){
-	if(cur == n){
+	int bq = bw; 
+	if(cur == n){ // 已经成功填充到最后 
 		maxwid = bw;
 		memcpy(ans, A, sizeof(int)*n);
 	}else{
@@ -53,6 +54,7 @@ void dfs (int cur, int bw){
 //					printf("----before %d---\n", bw);
 					dfs(cur+1, bw);
 //					printf("----after %d---\n", bw);
+					bw = bq; // 恢复bw 
 					vis[i] = 0;
 				}else break;
 				// cur位置已经比maxwid大，之后更大，所以结束 

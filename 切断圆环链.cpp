@@ -61,9 +61,9 @@ int solve(){
 		memset(c, 0, sizeof(c));
 		for(int i = 0; i < n; i++){
 			if(open.test(i)) continue;
-			if( !c[i]){
+			if(!c[i]){
 				num++;
-				if(dfs(i,-1, open)) { // 存在环 
+				if(dfs(i,-1, open)) { // 存在环
 					ok = 0;
 					break;
 				}
@@ -92,4 +92,4 @@ int main(){
 		printf("Set %d: Minimum links to open is %d\n",++kase ,solve());
 	}
 	return 0;
-} 
+}
