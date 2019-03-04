@@ -6,7 +6,7 @@ const int maxn = 50;
 int block[maxn][3];
 int n, d[maxn][maxn];
 
-int getans(int &c, int &w,int idx, int k){
+void getans(int &c, int &w,int idx, int k){
 	c = w = -1;
 	for(int i = 0; i < 3; i++){
 		if(i==k) continue;

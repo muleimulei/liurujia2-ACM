@@ -52,7 +52,7 @@ inline Polyomino flip(const Polyomino &p0){
 	for(Polyomino::const_iterator c = p0.begin(); c!=p0.end(); c++){
 		p.insert(Cell(c->x, -c->y));
 	}
-	return normalize(p); 
+	return normalize(p);
 } 
 
 // 向P0添加一个格子，如果之前没有，那么添加进去 
@@ -115,7 +115,7 @@ void generate(){
 					if(min(maxX, maxY) < min(w, h) && max(maxX, maxY) < max(w, h)){
 						cnt++;
 					}
-				}	
+				}
 				ans[n][w][h] = cnt;
 			}
 		}

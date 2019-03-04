@@ -15,7 +15,7 @@ inline int ID(int a, int b, int c){
 }
 
 int s[3], t[3]; //起始于结束位置
-int deg[maxn], G[maxn][5]; // 
+int deg[maxn], G[maxn][5]; //
  
 inline bool conflict(int a, int b, int a2, int b2){
 	return a2==b2 || (a2==b && b2==a);
